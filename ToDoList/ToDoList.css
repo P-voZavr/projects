@@ -1,0 +1,55 @@
+.main {
+  text-align: center;
+  background-color: rgba(10, 10, 10, 0.973);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.head {
+  font-size: 70px;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+.inpt {
+  border: none;
+  width: 450px;
+  margin-right: 0px;
+  height: 29px;
+  border-radius: 15px;
+  opacity: 0.9;
+  transition: all 0.5s;
+}
+
+.inpt:read-write {
+  border: none;
+}
+.addButton {
+  margin-left: 20px;
+  height: 31px;
+  border-radius: 15px;
+  width: 50px;
+  background-color: rgb(0, 122, 65);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.delButton {
+  margin-left: 20px;
+  height: 31px;
+  border-radius: 15px;
+  width: 50px;
+  background-color: rgb(141, 11, 2);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.todo {
+  display: inline;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.tododiv {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
