@@ -15,7 +15,7 @@
   height: 100px;
   background-color: rgb(51, 51, 51);
   cursor: pointer;
-  transition: all 0, 1s;
+  transition: all, 0.25s;
 }
 .images {
   width: 60px;
@@ -23,6 +23,8 @@
 }
 .buttons:active {
   opacity: 0.8;
+  height: 98px;
+  width: 98px;
 }
 .vs {
   display: grid;
@@ -37,4 +39,30 @@
   border-radius: 15px;
   height: 40px;
   width: 100px;
+  cursor: pointer;
+  transition: all, 0.25s;
+  font-weight: bold;
+}
+.auto-button {
+  background-color: rgb(19, 179, 104);
+  border: none;
+  color: white;
+  border-radius: 15px;
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  transition: all, 0.25s;
+  font-weight: bold;
+}
+
+.auto-button:active {
+  height: 38px;
+  width: 98px;
+  opacity: 0.8;
+}
+
+.reset-button:active {
+  height: 38px;
+  width: 98px;
+  opacity: 0.8;
 }

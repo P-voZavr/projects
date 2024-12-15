@@ -70,3 +70,17 @@ let obj = {
   tie: 0,
   round: 0,
 };
+
+let isAuto = false;
+let id;
+function auto() {
+  if (!isAuto) {
+    id = setInterval(function () {
+      match(computerMove());
+    }, 1000);
+    isAuto = true;
+  } else {
+    isAuto = false;
+    clearInterval(id);
+  }
+}
