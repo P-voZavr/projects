@@ -17,6 +17,7 @@
   border-radius: 15px;
   opacity: 0.9;
   transition: all 0.5s;
+  outline: none;
 }
 
 .inpt:read-write {
@@ -52,4 +53,26 @@
 .tododiv {
   margin-top: 20px;
   margin-bottom: 20px;
+}
+
+.renameButton {
+  margin-left: 20px;
+  height: 31px;
+  border-radius: 15px;
+  width: 60px;
+  background-color: rgb(165, 102, 19);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.renameInpt {
+  width: 300px;
+  border: none;
+  height: 20px;
+  opacity: 0.9;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-bottom: 1px solid white;
+  outline: none;
 }

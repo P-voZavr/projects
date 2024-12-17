@@ -2,13 +2,18 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Rock Paper Scissors</title>
+    <title>ToDoList</title>
     <link rel="stylesheet" href="ToDoList.css" />
     <script src="ToDoList.js"></script>
   </head>
   <body class="main">
     <p class="head">Just do it.</p>
-    <input class="inpt" type="text" placeholder="Add todo" />
+    <input
+      class="inpt"
+      type="text"
+      placeholder="Add todo"
+      onkeydown="dopact()"
+    />
     <button class="addButton" onclick="addtodo()">add</button>
     <div class="td"></div>
   </body>
