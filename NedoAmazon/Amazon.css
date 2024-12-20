@@ -93,6 +93,11 @@
   margin-left: -4px;
   width: 50px;
   padding-bottom: 11px;
+  transition: all 0.25s;
+}
+
+.searchButton:active {
+  opacity: 0.9;
 }
 
 .search::placeholder {

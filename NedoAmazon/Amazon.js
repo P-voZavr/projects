@@ -108,12 +108,10 @@ let products = [
     productprice: 15.6,
   },
 ];
-function iswork() {
-  alert("iswork");
-}
-function init() {
+
+function refresh(v) {
   let idk = "";
-  products.forEach((product) => {
+  v.forEach((product) => {
     idk += `        <div class="productDiv">
           <div class="productImageDiv"> <img class="productImage" src=${product.productimage}></div>
           <div class="productName">${product.productname}</div>
@@ -129,4 +127,25 @@ function init() {
         </div>`;
   });
   document.querySelector(".bordgrid").innerHTML = idk;
+}
+
+function init() {
+  refresh(products);
+}
+
+function gridSearch() {
+  newgrid = [];
+  products.forEach((v) => {
+    if (
+      v.productname
+        .toLowerCase()
+        .includes(document.querySelector(".search").value.toLowerCase())
+    ) {
+      newgrid.push(v);
+    }
+  });
+
+  let idk = "";
+  refresh(newgrid);
+  document.querySelector(".search").value = "";
 }
