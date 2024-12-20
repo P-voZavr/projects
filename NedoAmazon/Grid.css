@@ -67,4 +67,10 @@
   width: 100%;
   border: none;
   border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.125s;
+}
+
+.productBuyButton:active {
+  background-color: rgb(209, 161, 2);
 }

@@ -26,6 +26,8 @@
   max-width: 850px;
   margin-left: 10px;
   margin-right: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .right {
@@ -37,6 +39,7 @@
 .amazonLogo {
   width: 100px;
   margin-top: 5px;
+  cursor: pointer;
 }
 
 .p {
@@ -46,12 +49,14 @@
 .returns {
   display: block;
   font-size: 13px;
+  cursor: pointer;
 }
 
 .orders {
   display: block;
   font-size: 13px;
   font-weight: bolder;
+  cursor: pointer;
 }
 
 .cart-quantity {
@@ -74,7 +79,7 @@
 }
 
 .search {
-  height: 37px;
+  height: 38px;
   width: 90%;
   outline: none;
   border: none;
@@ -84,16 +89,13 @@
 }
 
 .searchButton {
-  height: 39px;
-  display: inline;
-  border-radius: 0 4px 4px 0;
+  background-color: rgb(254, 189, 105);
   border: none;
-  background-color: rgb(224, 159, 75);
-  color: white;
-  margin-left: -4px;
-  width: 50px;
-  padding-bottom: 11px;
-  transition: all 0.25s;
+  width: 45px;
+  height: 40px;
+  border-radius: 0 4px 4px 0;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
 .searchButton:active {

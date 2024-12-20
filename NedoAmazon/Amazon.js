@@ -109,6 +109,8 @@ let products = [
   },
 ];
 
+let cart = [];
+
 function refresh(v) {
   let idk = "";
   v.forEach((product) => {
@@ -123,10 +125,16 @@ function refresh(v) {
           <div class="productAmount">
             <input class="productInput" type="text">
           </div>
-          <button class="productBuyButton">Add to cart</button>
+          <button class="productBuyButton" 
+          data-product-image="${product.productimage}" 
+          data-product-name="${product.productname}" 
+          data-product-price="${product.productprice}"
+          data-product-amount="1"
+          >Add to cart</button>
         </div>`;
   });
   document.querySelector(".bordgrid").innerHTML = idk;
+  buy();
 }
 
 function init() {
@@ -144,8 +152,50 @@ function gridSearch() {
       newgrid.push(v);
     }
   });
-
-  let idk = "";
   refresh(newgrid);
   document.querySelector(".search").value = "";
+}
+
+function buy() {
+  document.querySelectorAll(".productBuyButton").forEach((button) => {
+    button.addEventListener("click", () => {
+      let repeatproduct;
+
+      document.querySelectorAll(".productDiv").forEach((elem) => {
+        console.log(elem.querySelector(".productName").innerHTML);
+        if (
+          elem.querySelector(".productName").innerHTML ===
+          button.dataset.productName
+        ) {
+          button.dataset.productAmount = Number(
+            elem.querySelector(".productInput").value
+          );
+        }
+      });
+
+      cart.forEach((item) => {
+        if (item.productName === button.dataset.productName)
+          repeatproduct = item;
+      });
+      if (repeatproduct) {
+        repeatproduct.productAmount =
+          Number(repeatproduct.productAmount) +
+          Number(button.dataset.productAmount);
+      } else {
+        cart.push({
+          productName: button.dataset.productName,
+          productAmount: Number(button.dataset.productAmount),
+          productPrice: button.dataset.productPrice,
+          productImage: button.dataset.productImage,
+        });
+      }
+
+      let cartCalk = 0;
+      cart.forEach((item) => {
+        cartCalk += Number(item.productAmount);
+      });
+      document.querySelector(".cart-quantity").innerHTML = cartCalk;
+      console.log(cart);
+    });
+  });
 }
