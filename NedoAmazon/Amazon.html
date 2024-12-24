@@ -4,20 +4,23 @@
     <meta charset="utf-8" />
     <title>Amazon</title>
     <link rel="stylesheet" href="Amazon.css" />
-    <link rel="icon" href="Images/amazon-logo-mini.png">
-    <link rel="stylesheet" href="Grid.css">
+    <link rel="icon" href="Images/amazon-logo-mini.png" />
+    <link rel="stylesheet" href="Grid.css" />
+    <script src="Cart.js"></script>
     <script src="Amazon.js"></script>
   </head>
   <body class="body" onload="init()">
     <header class="header">
       <div class="left">
-        <img src="Images/amazon-logo-white.png" class="amazonLogo" onclick="init()"/>
+        <a>
+          <img src="Images/amazon-logo-white.png" class="amazonLogo" />
+        </a>
       </div>
       <div class="middle">
-        
-          <input class="search" type="text" placeholder="Search">
-          <button class="searchButton" onclick="gridSearch()"><img class="searchIcon"src="Images/search-icon.png"></button>
-        
+        <input class="search" type="text" placeholder="Search" />
+        <button class="searchButton" onclick="gridSearch()">
+          <img class="searchIcon" src="Images/search-icon.png" />
+        </button>
       </div>
       <div class="right">
         <p>
@@ -25,15 +28,16 @@
           <span class="orders">& Oreders</span>
         </p>
         <p>
-          <img src="Images/cart-icon.png" class="cartIcon">
-          <div class="cart-quantity">0</div>
-          <div class="cartText">cart</div>
+          <a href="Cart.html" class="cartHref">
+            <img src="Images/cart-icon.png" class="cartIcon" />
+            <div class="cart-quantity">0</div>
+            <div class="cartText">cart</div>
+          </a>
         </p>
       </div>
     </header>
     <main class="main">
-      <div class="bordgrid">
-      </div>
+      <div class="bordgrid"></div>
     </main>
   </body>
 </html>

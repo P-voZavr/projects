@@ -1,0 +1,132 @@
+.cartHeader {
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  height: 60px;
+  color: rgb(0, 0, 0);
+  position: fixed;
+  right: 0;
+  left: 0;
+  top: 0;
+  padding-left: 30px;
+  padding-right: 30px;
+  justify-content: center;
+  align-items: center;
+}
+.cartamazonLogo {
+  width: 100px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.cartMiddle {
+  display: flex;
+  font-size: 25px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.checkoutSpan {
+  color: rgb(0, 113, 133);
+  font-size: 23px;
+  text-decoration: none;
+}
+
+.cartRight {
+  text-align: right;
+  width: 150px;
+}
+
+.innerHeader {
+  width: 100%;
+  max-width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pageTitle {
+  font-weight: 700;
+  font-size: 22px;
+  margin-bottom: 18px;
+}
+.main {
+  max-width: 1100px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 140px;
+  margin-bottom: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.body {
+  margin: 0;
+  align-items: center;
+}
+
+.checkoutGrid {
+  display: grid;
+  grid-template-columns: 1fr 350px;
+  column-gap: 12px;
+  align-items: start;
+}
+
+.gridItem {
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 4px;
+  padding: 18px;
+}
+
+.productImage {
+  max-width: 100%;
+  max-height: 120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.deliveryDate {
+  color: rgb(0, 118, 0);
+  font-weight: 700;
+  font-size: 19px;
+  margin-top: 5px;
+  margin-bottom: 22px;
+}
+
+.itemInfGrid {
+  display: grid;
+  grid-template-columns: 100px 1fr 1fr;
+  column-gap: 25px;
+}
+
+.productName {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.productPrice {
+  color: rgb(177, 39, 4);
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.deliveryOptionsTitle {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.deliveryOption {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.deliveryOptionDate {
+  color: rgb(0, 118, 0);
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
+.deliveryOptionPrice {
+  color: rgb(120, 120, 120);
+  font-size: 15px;
+}

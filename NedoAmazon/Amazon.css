@@ -111,3 +111,8 @@
 .searchIcon {
   height: 22px;
 }
+
+.cartHref {
+  color: rgb(240, 136, 4);
+  text-decoration-line: none;
+}

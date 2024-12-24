@@ -109,8 +109,6 @@ let products = [
   },
 ];
 
-let cart = [];
-
 function refresh(v) {
   let idk = "";
   v.forEach((product) => {
@@ -139,6 +137,7 @@ function refresh(v) {
 
 function init() {
   refresh(products);
+  document.querySelector(".cart-quantity").innerHTML = CartCalk();
 }
 
 function gridSearch() {
@@ -156,13 +155,20 @@ function gridSearch() {
   document.querySelector(".search").value = "";
 }
 
+function CartCalk() {
+  let cartCalk = 0;
+  cart.forEach((item) => {
+    cartCalk += Number(item.productAmount);
+  });
+  return cartCalk;
+}
+
 function buy() {
   document.querySelectorAll(".productBuyButton").forEach((button) => {
     button.addEventListener("click", () => {
       let repeatproduct;
 
       document.querySelectorAll(".productDiv").forEach((elem) => {
-        console.log(elem.querySelector(".productName").innerHTML);
         if (
           elem.querySelector(".productName").innerHTML ===
           button.dataset.productName
@@ -181,6 +187,9 @@ function buy() {
         repeatproduct.productAmount =
           Number(repeatproduct.productAmount) +
           Number(button.dataset.productAmount);
+      } else if (isNaN(Number(button.dataset.productAmount))) {
+        alert("ебанат?");
+        alert("цифры пиши");
       } else {
         cart.push({
           productName: button.dataset.productName,
@@ -190,11 +199,7 @@ function buy() {
         });
       }
 
-      let cartCalk = 0;
-      cart.forEach((item) => {
-        cartCalk += Number(item.productAmount);
-      });
-      document.querySelector(".cart-quantity").innerHTML = cartCalk;
+      document.querySelector(".cart-quantity").innerHTML = CartCalk();
       console.log(cart);
     });
   });
