@@ -1,5 +1,7 @@
 let cart = [];
 
+let delivery = [];
+
 cart.push({
   productName: "Black and Gray Athletic Cotton Socks - 6 Pairs",
   productAmount: Number(1),
@@ -19,14 +21,14 @@ function itemsgenerete() {
   document.querySelector(
     ".cartMiddle"
   ).innerHTML = `Checkout( <span class="checkoutSpan">${CartCalk()} Items</span> )`;
-  console.log(cart);
+  document.querySelector(".itemsAmount").innerHTML = `Items(${CartCalk()}):`;
 }
 
 function orderGenerete() {
   let cartSummary = "";
-
-  cart.forEach((product) => {
-    cartSummary += `
+  if (cart.length > 0) {
+    cart.forEach((product, index) => {
+      cartSummary += `
           <div class="gridItem">
             <div class="deliveryDate">
               Delivery date:
@@ -47,6 +49,7 @@ function orderGenerete() {
                 <div class="productQuantity">
                   Quantity:
                   <span class="quantityLabel">${product.productAmount}</span>
+                  <button class="delButton" onclick="remove1(${index})" >Delete</button>
                 </div>
               </div>
 
@@ -59,7 +62,7 @@ function orderGenerete() {
                   <input
                     class="deliveryOptionInput"
                     type="radio"
-                    name="delivery"
+                    name="delivery${index}"
                     checked=""
                   />
 
@@ -73,7 +76,7 @@ function orderGenerete() {
                   <input
                     class="deliveryOptionInput"
                     type="radio"
-                    name="delivery"
+                    name="delivery${index}"
                   />
 
                   <div>
@@ -86,7 +89,7 @@ function orderGenerete() {
                   <input
                     class="deliveryOptionInput"
                     type="radio"
-                    name="delivery"
+                    name="delivery${index}"
                   />
 
                   <div>
@@ -97,8 +100,43 @@ function orderGenerete() {
               </div>
           </div>
     `;
-
-    document.querySelector(".cartSummary").innerHTML = cartSummary;
+      delivery.push(0);
+      document.querySelector(".cartSummary").innerHTML = cartSummary;
+      itemsgenerete();
+      paymentGen();
+    });
+  } else {
+    document.querySelector(".cartSummary").innerHTML = "buy something pls";
     itemsgenerete();
+    paymentGen();
+  }
+}
+
+function paymentGen() {
+  let cartCalk = 0;
+
+  cart.forEach((item) => {
+    cartCalk += Number(item.productPrice);
   });
+
+  const tax = (cartCalk / 100) * 10;
+
+  document.querySelector(".paymentSummaryMoney").innerHTML = `$${cartCalk}`;
+  document.querySelector(".beforeTax").innerHTML = `$${cartCalk}`;
+  document.querySelector(".tax").innerHTML = `$${tax}`;
+  document.querySelector(".paymentSummaryMoneyTotal").innerHTML = `$${
+    cartCalk + tax
+  }`;
+  document.querySelector(".deliveryPrice").innerHTML = `$${delivery.reduce()}`;
+}
+
+function remove1(index) {
+  cart.pop(index);
+  console.log(cart);
+  orderGenerete();
+}
+
+function deliveryPrice(index, price) {
+  delivery[index] = Number(price);
+  orderGenerete();
 }

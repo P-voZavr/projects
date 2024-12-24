@@ -188,7 +188,7 @@ function buy() {
           Number(repeatproduct.productAmount) +
           Number(button.dataset.productAmount);
       } else if (isNaN(Number(button.dataset.productAmount))) {
-        alert("ебанат?");
+        alert("дурачек?");
         alert("цифры пиши");
       } else {
         cart.push({
