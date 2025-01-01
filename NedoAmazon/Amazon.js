@@ -1,3 +1,7 @@
+import { cart } from "./Cart.js";
+
+let newgrid;
+
 let products = [
   {
     productimage: "Images/athletic-cotton-socks-6-pairs.jpg",
@@ -204,3 +208,6 @@ function buy() {
     });
   });
 }
+
+init();
+gridSearch();
