@@ -49,6 +49,9 @@
   display: inline;
   margin-top: 20px;
   margin-bottom: 20px;
+  max-width: 400px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .tododiv {
   margin-top: 20px;
